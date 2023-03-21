@@ -29,9 +29,8 @@ jobs:
       env:
         SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
       with:
-        host: 3.237.77.85
+        host: 54.160.68.142
         username: ubuntu
         key: ${{ secrets.DEPLOY_KEY }}
         envs: SPRING_DATASOURCE_PASSWORD
-        debug: true
         script: ./deploy.sh
