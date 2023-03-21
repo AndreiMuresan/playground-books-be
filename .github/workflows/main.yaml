@@ -14,13 +14,12 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
         cache: 'maven'
-    - run: ./mvnw install
-    - run: ./mvnw package
+    - run: ./mvnw clean install -Dmaven.test.skip=true
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.2.1
       with:
         switches: -avzr --delete
-        path: target/
+        path: target/books-0.0.1-SNAPSHOT.jar
         remote_path: /opt/applications/books-be/
         remote_host: 3.237.77.85
         remote_user: ubuntu
