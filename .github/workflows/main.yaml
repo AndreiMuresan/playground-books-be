@@ -35,3 +35,4 @@ jobs:
         script: |
           pkill -9 -f java
           nohup java -jar /opt/applications/books-be/books-0.0.1-SNAPSHOT.jar > /opt/applications/books-be/books-be.log 2> /opt/applications/books-be/books-be.error < /dev/null &
+          echo "deployment complete"
